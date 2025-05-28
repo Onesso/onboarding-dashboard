@@ -1,11 +1,20 @@
 import { Component } from '@angular/core';
+import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-login-page',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './login-page.component.html',
-  styleUrl: './login-page.component.scss'
+  styleUrl: './login-page.component.scss',
 })
 export class LoginPageComponent {
+  loginForm = new FormGroup({
+    email: new FormControl(''),
+    password: new FormControl(''),
+  });
 
+  submitLoginForm() {
+    console.log('Email: ', this.loginForm.value.email);
+    console.log('password: ', this.loginForm.value.password);
+  }
 }

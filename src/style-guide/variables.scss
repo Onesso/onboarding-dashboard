@@ -1,0 +1,57 @@
+/* You can add global styles to this file, and also import other style files */
+
+//color token
+$color-primary: #004e92;
+$color-primary-hover: #0462c0;
+$color-accent: #10b981;
+$color-bg-light: #ffffff;
+$color-bg-dark: #0f172a;
+
+body {
+  background-color: $color-bg-light;
+
+  &.dark-mode {
+    background-color: $color-bg-dark;
+  }
+}
+
+//Typography scale
+$font-display-1: 2.25rem;
+$weight-display-1: 700;
+
+$font-h1: 1.5rem;
+$weight-h1: 700;
+
+$font-h2: 1.25rem;
+$weight-h2: 600;
+
+$font-body: 1rem;
+$weight-body: 400;
+
+$font-caption: 0.875rem;
+$weight-caption: 400;
+
+//Breakpoints
+@mixin extra-large {
+  @media (width >= 1280px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media (min-width: 1024) and (max-width: 1279px) {
+    @content;
+  }
+}
+
+@mixin medium {
+  @media (min-width: 641) and (max-width: 1023px) {
+    @content;
+  }
+}
+
+@mixin small {
+  @media (width <= 640px) {
+    @content;
+  }
+}
