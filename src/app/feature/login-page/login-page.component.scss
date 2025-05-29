@@ -55,6 +55,13 @@
           background: $color-primary;
           color: white;
         }
+
+        button {
+          &:hover {
+            background: $color-primary-hover;
+            cursor: pointer;
+          }
+        }
       }
     }
   }

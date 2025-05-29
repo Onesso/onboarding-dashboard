@@ -23,6 +23,16 @@
       "username": "Ella.Strosin39",
       "password": "password",
       "role": "admin"
+    },
+    {
+      "id": "b01e",
+      "username": "Yvette_Blick36",
+      "password": "password"
+    },
+    {
+      "id": "6d51",
+      "username": "Yvette_Blick36",
+      "password": "password11"
     }
   ],
   "onboardings": [
@@ -46032,11 +46042,13 @@
   "settings": [
     {
       "feature": "bulkOnboarding",
-      "enabled": true
+      "enabled": true,
+      "id": "523f"
     },
     {
       "feature": "darkModeBeta",
-      "enabled": false
+      "enabled": false,
+      "id": "a005"
     }
   ]
 }

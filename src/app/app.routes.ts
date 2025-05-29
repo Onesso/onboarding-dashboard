@@ -11,15 +11,15 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'layout',
     pathMatch: 'full',
   },
   {
-    path: '',
+    path: 'layout',
     component: LayoutComponent,
     children: [
       {
-        path: '',
+        path: 'dashboard',
         component: DashboardComponent,
       },
     ],

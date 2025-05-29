@@ -1,11 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
 
-$color-primary: #004e92;
-$color-primary-hover: #0462c0;
-$color-accent: #10b981;
-$color-bg-light: #ffffff;
-$color-bg-dark: #0f172a;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+@import "../src/style-guide/variables.scss";
 
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: roboto-serif, sans-serif;
+}
 body {
   background-color: $color-bg-light;
 
