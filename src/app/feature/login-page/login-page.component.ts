@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 
 @Component({
@@ -16,10 +17,26 @@ export class LoginPageComponent {
     password: new FormControl(''),
   });
 
+  private toast = inject(MatSnackBar);
+
   submitLoginForm() {
+    if (this.loginForm.valid) {
+      this.toast.open('Logged in successfull', 'Close', {
+        duration: 5000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+      });
+      this.loginForm.reset();
+      this.router.navigate(['/layout/dashboard']);
+    } else {
+      this.toast.open('Wrong credentials', 'OK', {
+        duration: 4000,
+        verticalPosition: 'top',
+        horizontalPosition: 'center',
+      });
+    }
+
     console.log('Email: ', this.loginForm.value.email);
     console.log('password: ', this.loginForm.value.password);
-
-    this.router.navigate(['/layout']);
   }
 }

@@ -1,33 +1,30 @@
+@use "../../../style-guide/variables.scss";
+
 .parent {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: repeat(11, 1fr);
-  gap: 16px;
-  height: 100%;
+  gap: 8px;
+  height: 100dvh;
+  position: fixed;
+  width: 100%;
 
   .Header {
     grid-column: span 12 / span 12;
-    background-color: red;
+    border-bottom: 1px solid rgb(220, 201, 201);
   }
   .sider-bar {
-    grid-column: span 2 / span 2;
+    grid-column: span 1 / span 1;
     grid-row: span 10 / span 10;
     grid-row-start: 2;
-    background-color: blue;
+    border-right: 1px solid rgb(220, 201, 201);
   }
 
   .main {
-    grid-column: span 10 / span 10;
-    grid-row: span 8 / span 8;
-    grid-column-start: 3;
+    grid-column: span 11 / span 11;
+    grid-row: span 10 / span 10;
+    grid-column-start: 2;
     grid-row-start: 2;
-    background-color: green;
-  }
-  .footer {
-    grid-column: span 10 / span 10;
-    grid-row: span 2 / span 2;
-    grid-column-start: 3;
-    grid-row-start: 10;
-    background-color: yellow;
+    border-bottom: 1px solid rgb(220, 201, 201);
   }
 }

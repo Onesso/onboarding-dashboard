@@ -1,27 +1,72 @@
+@use " ../../../../../style-guide/variables.scss";
+
 .parent {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(11, 1fr);
-  gap: 16px;
-  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 
-  .Header {
-    grid-column: span 12 / span 12;
-    background-color: indigo;
+  // top section
+  .top {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: repeat(12, 1fr);
+    gap: 16px;
+
+    .onbaording {
+      grid-column: span 3 / span 3;
+      padding: 16px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .dropoff {
+      grid-column: span 3 / span 3;
+      grid-column-start: 4;
+      padding: 16px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .avgapprovaltiming {
+      grid-column: span 3 / span 3;
+      grid-column-start: 7;
+      padding: 16px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
+    .kycfailures {
+      grid-column: span 3 / span 3;
+      grid-column-start: 10;
+      padding: 16px;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem;
+    }
   }
 
-  .sidebar {
-    grid-column: span 2 / span 2;
-    grid-row: span 10 / span 10;
-    grid-row-start: 2;
-    background-color: palevioletred;
+  @include variables.small {
+    .top {
+      display: flex;
+      flex-direction: column;
+    }
   }
 
-  .main {
-    grid-column: span 10 / span 10;
-    grid-row: span 10 / span 10;
-    grid-column-start: 3;
-    grid-row-start: 2;
-    background-color: aqua;
+  @include variables.medium {
+    .top {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+
+    .top > div {
+      flex: 0 0 calc(50% - 8px);
+      box-sizing: border-box;
+    }
   }
+
+
+  // middle sections
 }

@@ -29,7 +29,11 @@
                 "input": "public"
               }
             ],
-            "styles": ["src/styles.scss", "src/style-guide/variables.scss"],
+            "styles": [
+              "src/styles.scss",
+              "src/style-guide/variables.scss",
+              "src/style-guide/toast.scss"
+            ],
             "scripts": []
           },
           "configurations": {
