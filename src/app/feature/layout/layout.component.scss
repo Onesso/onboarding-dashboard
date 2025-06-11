@@ -28,3 +28,18 @@
     border-bottom: 1px solid rgb(220, 201, 201);
   }
 }
+
+@include variables.small {
+  .parent {
+    display: flex;
+    flex-direction: column;
+
+    .sider-bar {
+      display: none;
+    }
+
+    .main {
+      padding: 10px;
+    }
+  }
+}

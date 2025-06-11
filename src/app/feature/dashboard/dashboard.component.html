@@ -1,21 +1,128 @@
-<div>
-  <h1>Dashboard ></h1>
+<div *ngIf="message == false">
+  <div>
+    <h4>Hi, Welcome back {{name.username}}👋</h4>
+  </div>
+  <div class="parent">
+    <div class="top">
+      <div class="onbaording">
+        <div class="title">
+          <p class="p-title">Total onboarding</p>
+        </div>
+        <div class="values">
+          <div class="icon">
+            <i-lucide
+              [img]="MoveUp"
+              color="green"
+              size="17"
+              class="dashboard"
+            ></i-lucide>
+          </div>
+          <p class="totalonboardingsdata">
+            {{ totalonboardingsdata }}
+          </p>
+        </div>
+      </div>
+      <div class="dropoff">
+        <div class="title">
+          <p class="p-title">Drop-off</p>
+        </div>
+        <div class="values">
+          <div class="icon">
+            <i-lucide
+              [img]="MoveDown"
+              color="red"
+              size="17"
+              class="dashboard"
+            ></i-lucide>
+          </div>
+          <p class="totalonboardingsdata">
+            {{ dropOffPercentagedata }}
+          </p>
+        </div>
+      </div>
+      <div class="avgapprovaltiming">
+        <div class="title">
+          <p class="p-title">Avg approval time</p>
+        </div>
+        <div class="values">
+          <div class="icon">
+            <i-lucide
+              [img]="MoveDown"
+              color="red"
+              size="17"
+              class="dashboard"
+            ></i-lucide>
+          </div>
+          <p class="totalonboardingsdata">
+            {{ avgApprovalTimedata }}
+          </p>
+        </div>
+      </div>
+      <div class="kycfailures">
+        <div class="title">
+          <p class="p-title">KYC failure</p>
+        </div>
+        <div class="values">
+          <div class="icon">
+            <i-lucide
+              [img]="MoveDown"
+              color="red"
+              size="17"
+              class="dashboard"
+            ></i-lucide>
+          </div>
+          <p class="totalonboardingsdata">
+            {{ kycFailureCountdata }}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="middle">
+      <div class="trendchart">
+        <app-trend-chart-component></app-trend-chart-component>
+      </div>
+      <div class="funnelChart">
+        <app-funnel-chart></app-funnel-chart>
+      </div>
+    </div>
+
+    <div class="bottom">
+      <div class="latestonboardingtable">
+        <app-latest-onboarding-table-component></app-latest-onboarding-table-component>
+      </div>
+    </div>
+  </div>
 </div>
-<div class="parent">
-  <div class="top">
-    <div class="onbaording">Total onboarding</div>
-    <div class="dropoff">Drop - off</div>
-    <div class="avgapprovaltiming">Avg approval timing</div>
-    <div class="kycfailures">KYC failures</div>
+
+<div class="sm-screen-nav" *ngIf="message == true">
+  <div class="topNaviagtion">
+    <div class="Dashboard">
+      <div class="icon-sm-screen" (click)="navigateDashboard()">
+        <i-lucide [img]="LayoutDashboard" color="blue" size="39"></i-lucide>
+      </div>
+      <div class="name-sm-screen"><p>Dashboard</p></div>
+    </div>
+    <div class="Customers" (click)="navigateCustomers()">
+      <div class="icon-sm-screen">
+        <i-lucide [img]="Users" color="blue" size="39"></i-lucide>
+      </div>
+      <div class="name-sm-screen"><p>Customers</p></div>
+    </div>
+    <div class="Settings" (click)="navigateSettings()">
+      <div class="icon-sm-screen">
+        <i-lucide [img]="Settings" color="blue" size="39"></i-lucide>
+      </div>
+      <div class="name-sm-screen"><p>Settings</p></div>
+    </div>
   </div>
 
-  <div class="middle">
-    <div class="trendchart"></div>
-    <div class="funnelChart"></div>
+  <div class="logout">
+    <div class="logout-btn" (click)="navigateLoginpage()">
+      <div class="icon-sm-screen">
+        <i-lucide [img]="LogOut" color="blue" size="39"></i-lucide>
+      </div>
+      <div class="name-sm-screen"><p>Log out</p></div>
+    </div>
   </div>
-
-  <div class="bottom">
-    <div class="latestonboardingtable"></div>
-  </div>
-  
 </div>

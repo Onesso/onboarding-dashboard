@@ -34,6 +34,7 @@ export class SidebarComponent {
   navigateLoginpage() {
     const confirmed = window.confirm('Are you sure you want to log out?');
     if (confirmed) {
+      localStorage.clear();
       this.router.navigate(['/login']);
     }
   }

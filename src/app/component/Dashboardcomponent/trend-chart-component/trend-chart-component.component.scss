@@ -1,0 +1,18 @@
+@use "../../../../style-guide/variables.scss";
+
+.trendChart {
+  height: 250px;
+  width: 500px;
+}
+
+@include variables.small {
+  .trendChart {
+    width: 320px;
+  }
+}
+
+@include variables.medium {
+  .trendChart {
+    width: 600px;
+  }
+}

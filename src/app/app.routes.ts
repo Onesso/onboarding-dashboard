@@ -6,6 +6,7 @@ import { WildcatrouteComponent } from './feature/wildcatroute/wildcatroute.compo
 import { CustomerComponent } from './feature/customer/customer.component';
 import { CustomerDetailComponent } from './feature/customer-detail/customer-detail.component';
 import { SettingsComponent } from './feature/settings/settings.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
   {
@@ -15,12 +16,13 @@ export const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'layout',
+    redirectTo: 'layout/dashboard',
     pathMatch: 'full',
   },
   {
     path: 'layout',
     component: LayoutComponent,
+    canActivate: [authGuard],
     children: [
       {
         path: 'dashboard',

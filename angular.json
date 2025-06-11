@@ -34,7 +34,7 @@
               "src/style-guide/variables.scss",
               "src/style-guide/toast.scss"
             ],
-            "scripts": []
+            "scripts": ["node_modules/apexcharts/dist/apexcharts.min.js"]
           },
           "configurations": {
             "production": {

@@ -50,6 +50,12 @@
           border: 1px solid rgb(125, 114, 114);
           border-radius: 5px;
         }
+        small {
+          .inputError {
+            color: red;
+            font-size: small;
+          }
+        }
 
         button {
           background: variables.$color-primary;
@@ -59,6 +65,10 @@
         button {
           &:hover {
             background: variables.$color-primary-hover;
+            cursor: pointer;
+          }
+          &:disabled {
+            background-color: rgb(92, 168, 236);
             cursor: pointer;
           }
         }
